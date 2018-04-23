@@ -1,0 +1,40 @@
+﻿<dx:DXWindow
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+        xmlns:dxnav="http://schemas.devexpress.com/winfx/2008/xaml/navigation" 
+        dx:ThemeManager.ThemeName="Office2013"
+        x:Class="WpfApplication303.MainWindow"
+        Title="MainWindow" Height="500" Width="1210">
+    <Window.Resources>
+        <Style x:Key="SecondLevelTileItemStyle" TargetType="{x:Type dxnav:TileBarItem}">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Height" Value="40"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <dxnav:TileBar VerticalAlignment="Top" Background="#FFE8E8E8">
+            <dxnav:TileBarItem TileGlyph="Images/Dashboard.png" Content="Dashboard" Background="#FF00879C"/>
+            <dxnav:TileBarItem TileGlyph="Images/Tasks.png" Content="Tasks" Background="#FF404040"/>
+            <dxnav:TileBarItem TileGlyph="Images/Employees.png" Content="Employees" Background="#FFCC6D00"/>
+            <dxnav:TileBarItem TileGlyph="Images/Products.png" Content="Products" Background="#FF0073C4">
+                <dxnav:TileBarItem.FlyoutContentTemplate>
+                    <DataTemplate>
+                        <dxnav:TileBar x:Name="customTileBar" Background="#FF0073C4" ItemContainerStyle="{StaticResource SecondLevelTileItemStyle}">
+                            <dxnav:TileBarItem Content="HD Video Player"/>
+                            <dxnav:TileBarItem Content="50inch Plasma"/>
+                            <dxnav:TileBarItem Content="21inch Monitor"/>
+                            <dxnav:TileBarItem Content="Remote Control"/>
+                        </dxnav:TileBar>
+                    </DataTemplate>
+                </dxnav:TileBarItem.FlyoutContentTemplate>
+            </dxnav:TileBarItem>
+            <dxnav:TileBarItem TileGlyph="Images/Customers.png" Content="Customers" Background="#FF404040"/>
+            <dxnav:TileBarItem TileGlyph="Images/Sales.png" Content="Sales" Background="#FF3E7038"/>
+            <dxnav:TileBarItem TileGlyph="Images/Opportunities.png" Content="Opportunities" Background="#FF404040"/>
+        </dxnav:TileBar>
+
+    </Grid>
+</dx:DXWindow>
